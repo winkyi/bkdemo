@@ -23,7 +23,16 @@
         <entry file="file://$PROJECT_DIR$/conf/default.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
-              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conf/settings_testing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -40,22 +49,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="361">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="396">
+              <caret line="40" column="69" lean-forward="true" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home_application/work.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -63,18 +91,21 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/conf/default.py" />
         <option value="$PROJECT_DIR$/conf/settings_development.py" />
-        <option value="$PROJECT_DIR$/home_application/urls.py" />
         <option value="$PROJECT_DIR$/templates/home_application/helloworld.html" />
+        <option value="$PROJECT_DIR$/templates/home_application/work.html" />
+        <option value="$PROJECT_DIR$/home_application/urls.py" />
         <option value="$PROJECT_DIR$/home_application/views.py" />
+        <option value="$PROJECT_DIR$/conf/settings_testing.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="15" />
     <option name="y" value="30" />
     <option name="width" value="1890" />
     <option name="height" value="960" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -86,6 +117,11 @@
             <path>
               <item name="bkdemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="bkdemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bkdemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bkdemo" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bkdemo" type="b2602c69:ProjectViewProjectNode" />
@@ -163,15 +199,15 @@
       <updated>1554563199343</updated>
       <workItem from="1554563204873" duration="2517000" />
       <workItem from="1554649925213" duration="13000" />
-      <workItem from="1554691898557" duration="2565000" />
+      <workItem from="1554691898557" duration="3816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5095000" />
+    <option name="totallyTimeSpent" value="6346000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2506063" />
@@ -225,13 +261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/settings_development.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -239,17 +268,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/default.py">
+    <entry file="file://$PROJECT_DIR$/templates/home_application/work.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="49" column="62" lean-forward="true" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home_application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="396">
+          <caret line="40" column="69" lean-forward="true" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/settings_testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>

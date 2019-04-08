@@ -35,3 +35,7 @@ def contactus(request):
 
 def helloworld(request):
     return render_mako_context(request,'/home_application/helloworld.html')
+
+
+def work(request):
+    return render_mako_context(request,'/home_application/work.html')
