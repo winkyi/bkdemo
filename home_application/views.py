@@ -10,7 +10,7 @@ See the License for the specific language governing permissions and limitations 
 """
 
 from common.mymako import render_mako_context
-
+from models import Member
 
 def home(request):
     """
@@ -38,4 +38,23 @@ def helloworld(request):
 
 
 def work(request):
+
+    alluser = Member.get_all_members(request.COOKIES.get('bk_token',''))
+    print "alluser:%s" % alluser
     return render_mako_context(request,'/home_application/work.html')
+
+
+def index(request):
+    return render_mako_context(request,'/home_application/index.html')
+
+
+def group_add(request):
+    return render_mako_context(request,'/home_application/groupadd.html')
+
+
+def group_save(request):
+    return render_mako_context(request,'/home_application/groupsave.html')
+
+
+def get_groups(request):
+    return render_mako_context(request,'/home_application/getgroup.html')

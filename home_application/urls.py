@@ -17,5 +17,9 @@ urlpatterns = patterns(
     (r'^dev-guide/$', 'dev_guide'),
     (r'^contactus/$', 'contactus'),
     (r'^helloworld/$', 'helloworld'),
+    (r'^index/$', 'index'),
+    (r'group/add/', 'group_add'),
+    (r'group/save/', 'group_save'),
+    (r'group/get/', 'get_groups'),
     #(r'^work/$', 'work'),
 )
