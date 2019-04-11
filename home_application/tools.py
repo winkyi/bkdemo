@@ -8,7 +8,7 @@ from common.log import logger
 获取平台所有用户信息
 """
 def get_all_user(bk_token):
-    url = "%s/api/c/compapi/bk_login/get_all_user/" % BK_PAAS_HOST
+    url = "%s/api/c/compapi/v2/bk_login/get_all_users/" % BK_PAAS_HOST
     form_data = {
         "app_code" : APP_ID,
         "app_secret" :APP_TOKEN,

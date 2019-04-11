@@ -12,13 +12,15 @@ See the License for the specific language governing permissions and limitations 
 from django.db import models
 from account.models import BkUser
 from tools import get_all_user
+import django.utils.timezone as timezone
 
 """
 用户信息
 """
 class Member(models.Model):
     user = models.ForeignKey(BkUser,blank=True,null=True)
-    username = models.CharField(u"用户名",max_length=128)
+    username = models.CharField(u"用户名登录名",max_length=128)
+    fullname = models.CharField(u"用户姓名",max_length=128)
 
     isActive = models.BooleanField(u"是否激活",default=True)
 
@@ -31,34 +33,34 @@ class Member(models.Model):
 
     @classmethod
     def get_all_members(cls,bk_token):
-        username = []
         data = get_all_user(bk_token)
         if data['data']:
             for u in data['data']:
-                username.append(u['username'])
-        return username
+                Member.get_or_crate_member_by_username(u["bk_username"],u["chname"])
+            members = Member.objects.filter(isActive=True)
+            return members
+        else:
+            return []
+
+    #通过用户名获取或者新增一个用户
+    @classmethod
+    def get_or_crate_member_by_username(cls,username,chname):
+        member = Member.get_member_by_username(username)
+        if not isinstance(member,Member):
+            #创建用户
+            member = Member(username=username,fullname=chname)
+            member.save()
+        return member
 
 
-"""
-会议组
-"""
-class Group(models.Model):
-    group_name = models.CharField(u"名称",max_length=300)
-    hostess = models.ForeignKey(Member,verbose_name=u"主持人",blank=True,null=True,related_name="group_as_hostess")
-    recorder = models.ForeignKey(Member,verbose_name=u"记录人",blank=True,null=True,related_name="group_as_recorder")
-    join_member = models.ManyToManyField(Member,verbose_name=u"参会人员",blank=True,null=True,related_name="group_as_join")
-    addr = models.CharField(verbose_name=u"会议地点",max_length=300)
-    quantumtime = models.CharField(verbose_name=u"时间段",max_length=300)
-
-
-    class Meta:
-        verbose_name = u"会议组表"
-        verbose_name_plural = u"会议组表"
-
-
-    def __unicode__(self):
-        return self.group_name
-
+    #通过用户名获取一个用户
+    @classmethod
+    def get_member_by_username(cls,username):
+        try:
+            member= cls.objects.get(username=username,isActive=True)
+        except Exception as e:
+            member = None
+        return member
 
 
 """
@@ -78,4 +80,31 @@ class Job(models.Model):
 
     def __unicode__(self):
         return self.job_item
+
+
+"""
+会议组
+"""
+class Group(models.Model):
+    group_name = models.CharField(u"名称",max_length=300)
+    hostess = models.ForeignKey(Member,verbose_name=u"主持人",blank=True,null=True,related_name="group_as_hostess")
+    recorder = models.ForeignKey(Member,verbose_name=u"记录人",blank=True,null=True,related_name="group_as_recorder")
+    join_member = models.ManyToManyField(Member,verbose_name=u"参会人员",blank=True,null=True,related_name="group_as_join")
+    addr = models.CharField(verbose_name=u"会议地点",max_length=300)
+    quantumtime = models.CharField(verbose_name=u"时间段",max_length=300)
+    create_time = models.DateTimeField(u"会议创建时间",default=timezone.now())
+    tswk_job = models.ForeignKey(Job,verbose_name=u"本周工作总结",blank=True,null=True,related_name="group_as_tswk")
+    nexwk_job = models.ForeignKey(Job,verbose_name=u"下周工作总结",blank=True,null=True,related_name="group_as_nexwk")
+
+    class Meta:
+        verbose_name = u"会议组表"
+        verbose_name_plural = u"会议组表"
+
+
+    def __unicode__(self):
+        return self.group_name
+
+
+
+
 

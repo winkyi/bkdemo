@@ -41,6 +41,8 @@ def work(request):
 
     alluser = Member.get_all_members(request.COOKIES.get('bk_token',''))
     print "alluser:%s" % alluser
+    print "cookies:%s" % request.COOKIES
+    print "current_user:%s" % request.user
     return render_mako_context(request,'/home_application/work.html')
 
 
@@ -48,12 +50,23 @@ def index(request):
     return render_mako_context(request,'/home_application/index.html')
 
 
-def group_add(request):
-    return render_mako_context(request,'/home_application/groupadd.html')
+def group_add(request,**kwargs):
+    all_members = Member.get_all_members(request.COOKIES.get('bk_token'))
+    kwargs["members"] = all_members
+    print kwargs
+    return render_mako_context(request,'/home_application/groupadd.html',kwargs)
 
 
 def group_save(request):
-    return render_mako_context(request,'/home_application/groupsave.html')
+    if (request.method == 'POST'):
+        group_time = request.POST["group_time"]
+        hostess = request.POST["hostess"]
+        recorder = request.POST["recorder"]
+        join_member = request.POST.getlist("join_member")
+        group_addr = request.POST["group_addr"]
+        group_context = request.POST["group_context"]
+        print group_time,hostess,recorder,join_member,group_addr,group_context
+        return render_mako_context(request,'/home_application/groupsave.html')
 
 
 def get_groups(request):

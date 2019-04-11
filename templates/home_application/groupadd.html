@@ -1,63 +1,72 @@
 <%inherit file="/base.html"/>
 
 <%block name="content">
-
 <!-- content start -->
             <div class="king-content-wrap">
                 <div class="king-layout1-content" style="margin-left: -150px;">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="post"  action="${SITE_URL}group/save/">
+                        <input class="csrf-input" type="hidden" name="csrfmiddlewaretoken" value=""/>
                         <div class="form-group clearfix">
                             <label class="col-sm-3 control-label bk-lh30 pt0">周报时间：</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control bk-valign-top" id="" style="width:500px" placeholder="提示信息"> </div>
+                                <input type="text" class="form-control bk-valign-top" name="group_time" id="group_time" style="width:500px" placeholder="2019-08-08"> </div>
                         </div>
                         <div class="form-group clearfix ">
                             <label class="col-sm-3 control-label bk-lh30 pt0">主持人：</label>
                             <div class="col-sm-9">
-                                <select name="" id="" class="form-control bk-valign-top" style="width:500px">
-                                    <option value="选择项1">选择项1</option>
-                                    <option value="选择项2">选择项2</option>
-                                    <option value="选择项3">选择项3</option>
-                                    <option value="选择项4">选择项4</option>
-                                </select>
+                                <div class="plugin3_demo" id="plugin3_demo1" style="display:inline-block;">
+                                    <select name="hostess" id="hostess" class="select2_box" style="width:500px">
+                                        % for m in members:
+                                        <option value="${m.username}">${m.username}[${m.fullname}]</option>
+                                        % endfor
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group clearfix ">
                             <label class="col-sm-3 control-label bk-lh30 pt0">记录人：</label>
                             <div class="col-sm-9">
-                                <select name="" id="" class="form-control bk-valign-top" style="width:500px">
-                                    <option value="选择项1">选择项1</option>
-                                    <option value="选择项2">选择项2</option>
-                                    <option value="选择项3">选择项3</option>
-                                    <option value="选择项4">选择项4</option>
-                                </select>
+                                <div class="plugin3_demo" id="plugin3_demo1" style="display:inline-block;">
+                                    <select name="recorder" id="recorder" class="select2_box" style="width:500px">
+                                        % for m in members:
+                                        <option value="${m.username}">${m.username}[${m.fullname}]</option>
+                                        % endfor
+                                    </select>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="form-group clearfix">
+                            <label class="col-sm-3 control-label bk-lh30 pt0">参会人员：</label>
+                            <div class="col-sm-9">
+                                <div class="plugin3_demo" id="plugin3_demo4" style="display:inline-block;">
+                                    <!-- select2 下拉选项可多选 start -->
+                                    <select multiple="true" class="select2_box" style="width:500px;" id="join_member" name="join_member">
+                                            % for m in members:
+                                            <option value="${m.username}">${m.username}[${m.fullname}]</option>
+                                            % endfor
+                                    </select>
+                                    <!-- select2 下拉选项可多选 end -->
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="form-group clearfix ">
                             <label class="col-sm-3 control-label bk-lh30 pt0">会议地点：</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control bk-valign-top" id="" placeholder="提示信息" style="width:500px"> </div>
+                                <input type="text" class="form-control bk-valign-top" name="group_addr" id="group_addr" placeholder="易惠科技1楼会议室" style="width:500px"> </div>
                         </div>
-                        <div class="form-group clearfix ">
-                            <label class="col-sm-3 control-label bk-lh30 pt0">参加人员：</label>
-                            <div class="col-sm-9">
-                                <select name="" id="" class="form-control bk-valign-top" style="width:500px">
-                                    <option value="选择项1">选择项1</option>
-                                    <option value="选择项2">选择项2</option>
-                                    <option value="选择项3">选择项3</option>
-                                    <option value="选择项4">选择项4</option>
-                                </select>
-                            </div>
-                        </div>
+
                         <div class="form-group has-feedback clearfix ">
                             <label class="control-label col-sm-3 pt0" for="introduction">会议内容：</label>
                             <div class="col-sm-9">
-                                <textarea class="form-control" rows="3" placeholder="提示信息" style="width:500px"></textarea>
+                                <textarea id="group_context" name="group_context" class="form-control" rows="3" placeholder="大致会议内容" style="width:500px"></textarea>
                             </div>
                         </div>
                         <div class="form-group clearfix">
                             <div class="col-sm-9 col-sm-offset-3">
-                                <button type="button" class="king-btn mr10  king-info">提交</button>
+                                <button type="submit" class="king-btn mr10  king-info" id="confirm">提交</button>
                                 <button type="button" class="king-btn king-default ">取消</button>
                             </div>
                         </div>
@@ -65,4 +74,21 @@
                 </div>
             </div>
             <!-- content end -->
+
+<script type="text/javascript">
+    $("#plugin3_demo1 .select2_box").select2({
+        placeholder: '请选择选项'
+    });
+    //plugin3_demo1_js_end
+    // select2 下拉选项多选
+    $("#plugin3_demo4 .select2_box").select2({
+        placeholder: "选择参加会议的人员",
+        allowClear: true,
+    });
+
+
+
+</script>
+
 </%block>
+
