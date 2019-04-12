@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6452becb-013c-4b48-a4f1-fd364f88cd06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home_application/getmeeting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home_application/jobadd.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_application/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home_application/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home_application/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home_application/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home_application/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home_application/getgroup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_application/getgroup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home_application/groupadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home_application/groupadd.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="273">
+              <caret line="24" column="26" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -33,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+            <state relative-caret-position="196">
+              <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
               <folding>
                 <element signature="e#695#740#0" expanded="true" />
               </folding>
@@ -43,10 +45,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/home_application/getmeeting.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-114">
+              <caret line="84" column="167" selection-start-line="84" selection-start-column="167" selection-end-line="84" selection-end-column="167" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#1;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/home_application/jobadd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="41" column="69" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home_application/getgroup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+            <state relative-caret-position="115">
+              <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -58,17 +99,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home_application/groupadd.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/home_application/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="323">
+              <caret line="71" column="30" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="71" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home_application/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="92" column="15" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="15" />
+            <state relative-caret-position="190">
+              <caret line="97" column="13" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="13" />
               <folding>
                 <element signature="e#695#723#0" expanded="true" />
               </folding>
@@ -100,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3097">
-              <caret line="163" selection-start-line="163" selection-end-line="163" />
+            <state relative-caret-position="-1096">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -120,6 +156,10 @@
       <find>bui</find>
       <find>腾讯</find>
       <find>CsrfViewMiddleware</find>
+      <find>首页</find>
+      <find>demo.json</find>
+      <find>kendoGrid</find>
+      <find>age</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,16 +176,18 @@
         <option value="$PROJECT_DIR$/conf/settings_production.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/templates/home_application/base.html" />
-        <option value="$PROJECT_DIR$/home_application/urls.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/home_application/index.html" />
         <option value="$PROJECT_DIR$/templates/home_application/groupsave.html" />
         <option value="$PROJECT_DIR$/conf/default.py" />
         <option value="$PROJECT_DIR$/home_application/tools.py" />
         <option value="$PROJECT_DIR$/templates/home_application/groupadd.html" />
         <option value="$PROJECT_DIR$/home_application/models.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/home_application/urls.py" />
         <option value="$PROJECT_DIR$/home_application/views.py" />
         <option value="$PROJECT_DIR$/templates/home_application/getgroup.html" />
+        <option value="$PROJECT_DIR$/templates/home_application/jobadd.html" />
+        <option value="$PROJECT_DIR$/templates/home_application/getmeeting.html" />
       </list>
     </option>
   </component>
@@ -208,6 +250,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\py_project\bkdemo\static\js" />
+      <recent name="D:\py_project\bkdemo\static\css" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -262,7 +310,7 @@
       <workItem from="1554865277425" duration="12000" />
       <workItem from="1554874600423" duration="14061000" />
       <workItem from="1554943230597" duration="29837000" />
-      <workItem from="1555030121446" duration="4120000" />
+      <workItem from="1555030121446" duration="18595000" />
     </task>
     <task id="LOCAL-00001" summary="change logo">
       <created>1554779539848</created>
@@ -306,14 +354,21 @@
       <option name="project" value="LOCAL" />
       <updated>1554967291300</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="新增会议添加和会议查询功能">
+      <created>1555034326558</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555034326558</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64172000" />
+    <option name="totallyTimeSpent" value="78647000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26354083" />
@@ -330,8 +385,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29662523" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29662523" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -348,7 +403,8 @@
     <MESSAGE value="变更主页内容为周报内容" />
     <MESSAGE value="新增会议相关页面操作" />
     <MESSAGE value="优化一些功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化一些功能" />
+    <MESSAGE value="新增会议添加和会议查询功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增会议添加和会议查询功能" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/home_application/helloworld.html">
@@ -445,13 +501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3097">
-          <caret line="163" selection-start-line="163" selection-end-line="163" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home_application/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -469,47 +518,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/urls.py">
+    <entry file="file://$PROJECT_DIR$/static/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="209">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home_application/groupadd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/home_application/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="92" column="15" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="15" />
-          <folding>
-            <element signature="e#695#723#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1096">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home_application/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+        <state relative-caret-position="196">
+          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
           <folding>
             <element signature="e#695#740#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home_application/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="97" column="13" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="13" />
+          <folding>
+            <element signature="e#695#723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_application/groupadd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="71" column="30" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="71" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home_application/getgroup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state relative-caret-position="115">
+          <caret line="39" column="36" lean-forward="true" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_application/jobadd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="41" column="69" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home_application/getmeeting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="84" column="167" selection-start-line="84" selection-start-column="167" selection-end-line="84" selection-end-column="167" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#1;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

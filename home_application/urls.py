@@ -21,5 +21,7 @@ urlpatterns = patterns(
     (r'group/add/', 'group_add'),
     (r'group/save/', 'group_save'),
     (r'group/get/', 'get_groups'),
+    (r'meeting/get/', 'get_meeting'),
+    (r'job/add/', 'job_add'),
     #(r'^work/$', 'work'),
 )

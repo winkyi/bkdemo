@@ -75,3 +75,12 @@ def get_groups(request,**kwargs):
     all_group = Group.objects.all()
     kwargs["groups"] = all_group
     return render_mako_context(request,'/home_application/getgroup.html',kwargs)
+
+
+
+def get_meeting(request,**kwargs):
+    return render_mako_context(request,'/home_application/getmeeting.html',kwargs)
+
+
+def job_add(request,**kwargs):
+    return render_mako_context(request,'/home_application/jobadd.html',kwargs)

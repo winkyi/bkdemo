@@ -12,7 +12,9 @@
                                 <th style="width: 15%;">会议成员</th>
                                 <th style="width: 15%;">主持人</th>
                                 <th style="width: 15%;">创建日期</th>
-                                <th>操作</th>
+                                <th>查看</th>
+                                <th>填写周报</th>
+                                <th>删除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -22,13 +24,20 @@
                                 <td style="width: 15%;">${g.group_name}</td>
 
                                 <td style="width: 15%;">
-                                    ${g.join_member.all()}
+                                    <%  jm_obj = g.join_member.all() %>
+                                    % for jm in jm_obj:
+                                        ${jm.fullname}
+                                    % endfor
                                 </td>
                                 <td style="width: 15%;">${g.hostess.fullname}</td>
                                 <td style="width: 15%;">${g.create_time}</td>
                                 <td>
-                                    <button class="btn btn-xs btn-success"> <i class="glyphicon glyphicon-ok"></i> </button>
-                                    <button class="btn btn-xs btn-warning"> <i class="glyphicon glyphicon-edit"></i> </button>
+                                    <button class="btn btn-xs btn-success" onclick="window.location.href='${SITE_URL}meeting/get/?gid=${g.id}'"> <i class="glyphicon glyphicon-ok"></i> </button>
+                                </td>
+                                <td >
+                                    <button class="btn btn-xs btn-warning" onclick="window.location.href='${SITE_URL}job/add/?gid=${g.id}'" > <i class="glyphicon glyphicon-edit"></i> </button>
+                                </td>
+                                <td>
                                     <button class="btn btn-xs btn-danger"> <i class="glyphicon glyphicon-remove"></i> </button>
                                 </td>
                             </tr>
