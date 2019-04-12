@@ -10,7 +10,8 @@ See the License for the specific language governing permissions and limitations 
 """
 
 from common.mymako import render_mako_context
-from models import Member
+from models import Member,Group
+import json
 
 def home(request):
     """
@@ -59,15 +60,18 @@ def group_add(request,**kwargs):
 
 def group_save(request):
     if (request.method == 'POST'):
-        group_time = request.POST["group_time"]
+        group_name = request.POST["group_name"]
         hostess = request.POST["hostess"]
         recorder = request.POST["recorder"]
         join_member = request.POST.getlist("join_member")
         group_addr = request.POST["group_addr"]
         group_context = request.POST["group_context"]
-        print group_time,hostess,recorder,join_member,group_addr,group_context
+        data = json.dumps({"group_name":group_name,"hostess":hostess,"recorder":recorder,"join_member":join_member,"group_addr":group_addr,"group_context":group_context})
+        Group.add_group(data)
         return render_mako_context(request,'/home_application/groupsave.html')
 
 
-def get_groups(request):
-    return render_mako_context(request,'/home_application/getgroup.html')
+def get_groups(request,**kwargs):
+    all_group = Group.objects.all()
+    kwargs["groups"] = all_group
+    return render_mako_context(request,'/home_application/getgroup.html',kwargs)

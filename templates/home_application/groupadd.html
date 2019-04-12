@@ -5,11 +5,11 @@
             <div class="king-content-wrap">
                 <div class="king-layout1-content" style="margin-left: -150px;">
                     <form class="form-horizontal" method="post"  action="${SITE_URL}group/save/">
-                        <input class="csrf-input" type="hidden" name="csrfmiddlewaretoken" value=""/>
+                        <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }" />
                         <div class="form-group clearfix">
-                            <label class="col-sm-3 control-label bk-lh30 pt0">周报时间：</label>
+                            <label class="col-sm-3 control-label bk-lh30 pt0">周报内容：</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control bk-valign-top" name="group_time" id="group_time" style="width:500px" placeholder="2019-08-08"> </div>
+                                <input type="text" class="form-control bk-valign-top" name="group_name" id="group_name" style="width:500px" placeholder="2019-08-08"> </div>
                         </div>
                         <div class="form-group clearfix ">
                             <label class="col-sm-3 control-label bk-lh30 pt0">主持人：</label>
@@ -43,7 +43,7 @@
                                     <!-- select2 下拉选项可多选 start -->
                                     <select multiple="true" class="select2_box" style="width:500px;" id="join_member" name="join_member">
                                             % for m in members:
-                                            <option value="${m.username}">${m.username}[${m.fullname}]</option>
+                                            <option value="${m.id}">${m.username}[${m.fullname}]</option>
                                             % endfor
                                     </select>
                                     <!-- select2 下拉选项可多选 end -->
@@ -85,8 +85,6 @@
         placeholder: "选择参加会议的人员",
         allowClear: true,
     });
-
-
 
 </script>
 

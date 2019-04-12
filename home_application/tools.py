@@ -22,4 +22,3 @@ def get_all_user(bk_token):
     except Exception as e:
         logger.debug(u'get_all_user | 接口请求错误: %s' % e)
         return {}
-

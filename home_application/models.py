@@ -13,6 +13,7 @@ from django.db import models
 from account.models import BkUser
 from tools import get_all_user
 import django.utils.timezone as timezone
+import json
 
 """
 用户信息
@@ -91,10 +92,10 @@ class Group(models.Model):
     recorder = models.ForeignKey(Member,verbose_name=u"记录人",blank=True,null=True,related_name="group_as_recorder")
     join_member = models.ManyToManyField(Member,verbose_name=u"参会人员",blank=True,null=True,related_name="group_as_join")
     addr = models.CharField(verbose_name=u"会议地点",max_length=300)
-    quantumtime = models.CharField(verbose_name=u"时间段",max_length=300)
     create_time = models.DateTimeField(u"会议创建时间",default=timezone.now())
-    tswk_job = models.ForeignKey(Job,verbose_name=u"本周工作总结",blank=True,null=True,related_name="group_as_tswk")
-    nexwk_job = models.ForeignKey(Job,verbose_name=u"下周工作总结",blank=True,null=True,related_name="group_as_nexwk")
+    group_context = models.CharField(verbose_name=u"会议内容",max_length=300)
+    tswk_job = models.ManyToManyField(Job,verbose_name=u"本周工作总结",blank=True,null=True,related_name="group_as_tswk")
+    nexwk_job = models.ManyToManyField(Job,verbose_name=u"下周工作总结",blank=True,null=True,related_name="group_as_nexwk")
 
     class Meta:
         verbose_name = u"会议组表"
@@ -105,6 +106,24 @@ class Group(models.Model):
         return self.group_name
 
 
-
+    """
+    新增会议信息
+    """
+    @classmethod
+    def add_group(self,data):
+        print "data is %s" % data
+        try:
+            data_dic = json.loads(data)
+            g_obj = Group(group_name=data_dic['group_name'],addr=data_dic['group_addr'],group_context=data_dic['group_context'])
+            hostess = Member.objects.get(username=data_dic['hostess'])
+            recorder = Member.objects.get(username=data_dic['recorder'])
+            g_obj.save()
+            g_obj.hostess = hostess
+            g_obj.recorder = recorder
+            join_member = data_dic['join_member']
+            g_obj.join_member.add(*join_member)
+            g_obj.save()
+        except Exception as e:
+            print 'add group metting faild,error is %s' % e
 
 
