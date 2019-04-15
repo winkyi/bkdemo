@@ -24,5 +24,6 @@ urlpatterns = patterns(
     (r'meeting/get/', 'get_meeting'),
     (r'job/add/', 'job_add'),
     (r'job/save/', 'job_save'),
+    (r'test1/', 'test1'),
     #(r'^work/$', 'work'),
 )

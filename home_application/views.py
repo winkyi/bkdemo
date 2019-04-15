@@ -121,3 +121,6 @@ def job_save(request):
 
     response = {"success":"000000000"}
     return HttpResponse(response)
+
+def test1(request):
+    return render_mako_context(request,'/home_application/test1.html')
