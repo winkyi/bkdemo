@@ -3,7 +3,8 @@
 
 <%block name="content">
 
-<form>
+<form action="${SITE_URL}job/save/?gid=${gid}" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }" />
     <ul class="nav nav-tabs">
         <li class="active"><a href="#home" data-toggle="tab">本周工作内容</a>
         </li>
@@ -23,23 +24,23 @@
                 <td>
                     <div class="form-group">
                         <div class="control-input">
-                            <textarea id="group_context" name="group_context" class="form-control" rows="5" style="width:500px"></textarea>
+                            <textarea id="tswk_group_context" name="tswk_group_context" class="form-control" rows="5" style="width:500px"></textarea>
                         </div>
                     </div>
                 </td>
                 <td>
                     <div class="sumoselect_demo" id="sumoselect_demo1">
-                    <select name="execution" class="SlectBox">
-                        <option value="finish">已完成</option>
-                        <option value="par_finish">部分完成</option>
-                        <option value="unfinish">未完成</option>
+                    <select name="tswk_execution" class="SlectBox">
+                        <option value="0">已完成</option>
+                        <option value="1">部分完成</option>
+                        <option value="2">未完成</option>
                     </select>
                 </div>
                 </td>
                 <td>
                     <div class="form-group">
                         <div class="control-input">
-                            <textarea id="group_context" name="remark" class="form-control" rows="5" style="width:300px"></textarea>
+                            <textarea id="tswk_remark" name="tswk_remark" class="form-control" rows="5" style="width:300px"></textarea>
                         </div>
                     </div>
                 </td>
@@ -66,14 +67,14 @@
                 <td>
                 <div class="form-group">
                     <div class="control-input">
-                        <textarea id="group_context" name="group_context" class="form-control" rows="5" style="width:500px"></textarea>
+                        <textarea id="nex_group_context" name="nex_group_context" class="form-control" rows="5" style="width:500px"></textarea>
                     </div>
                 </div>
                 </td>
                 <td>
                 <div class="form-group">
                     <div class="control-input">
-                        <textarea id="group_context" name="group_context" class="form-control" rows="5" style="width:400px"></textarea>
+                        <textarea id="nex_remark" name="nex_remark" class="form-control" rows="5" style="width:400px"></textarea>
                     </div>
                 </div>
                 </td>

@@ -7,14 +7,13 @@
                     <table class="table mb0 pr15 ranger-box2 " width="100">
                         <thead>
                             <tr>
-                                <th style="width: 70px;">#</th>
+                                <th style="width: 50px;">#</th>
                                 <th style="width: 15%;">会议名称</th>
                                 <th style="width: 15%;">会议成员</th>
-                                <th style="width: 15%;">主持人</th>
+                                <th style="width: 10%;">主持人</th>
                                 <th style="width: 15%;">创建日期</th>
                                 <th>查看</th>
                                 <th>填写周报</th>
-                                <th>删除</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,9 +36,11 @@
                                 <td >
                                     <button class="btn btn-xs btn-warning" onclick="window.location.href='${SITE_URL}job/add/?gid=${g.id}'" > <i class="glyphicon glyphicon-edit"></i> </button>
                                 </td>
+                                <!--
                                 <td>
                                     <button class="btn btn-xs btn-danger"> <i class="glyphicon glyphicon-remove"></i> </button>
                                 </td>
+                                -->
                             </tr>
                             % endfor
                         </tbody>

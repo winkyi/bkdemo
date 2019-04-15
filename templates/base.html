@@ -140,24 +140,6 @@
                         return val;
                     });
                 }
-
-                // 异步请求后台数据
-                $.ajax({
-                    url: 'https://magicbox.bk.tencent.com/static_api/v3/components/table6/data.json',
-                    type: 'GET',
-                    success: function(res){
-                        var _html = ' ';
-                        var list = res.items;
-                        var tpl = $('#tpl_1554889359535').html();
-                        var headerTpl =  $('#header_tpl_1554889359535').html();
-                        for (var i=0,len=list.length; i < len; i++){
-                            var item = list[i];
-                            _html += renderTpl(tpl, item)
-                        }
-                        $('#code_1554889359535 tbody').html(_html);
-                        $('.ranger-box thead').html(renderTpl(headerTpl,res.catalogues));
-                    }
-                });
             });
 
 

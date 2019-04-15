@@ -10,8 +10,10 @@ See the License for the specific language governing permissions and limitations 
 """
 
 from common.mymako import render_mako_context
-from models import Member,Group
+from models import Member,Group,Job
 import json
+from django.http import  HttpResponse
+
 
 def home(request):
     """
@@ -79,8 +81,43 @@ def get_groups(request,**kwargs):
 
 
 def get_meeting(request,**kwargs):
+    gid = request.GET.get("gid")
+    group = Group.objects.get(id=gid)
+    kwargs["groups"] = group
     return render_mako_context(request,'/home_application/getmeeting.html',kwargs)
 
 
 def job_add(request,**kwargs):
+    gid = request.GET.get("gid")
+    kwargs["gid"] = gid
     return render_mako_context(request,'/home_application/jobadd.html',kwargs)
+
+
+def job_save(request):
+    if (request.method == 'POST'):
+        tswk_group_context = request.POST["tswk_group_context"]
+        tswk_execution = request.POST["tswk_execution"]
+        tswk_remark = request.POST["tswk_remark"]
+
+        nex_group_context = request.POST["nex_group_context"]
+        nex_remark = request.POST["nex_remark"]
+
+        gid = request.GET.get("gid")
+        try:
+            login_user = request.user
+            lu_obj = Member.objects.get(username=login_user)
+            tswk = Job(job_item=tswk_group_context,status=tswk_execution,remark=tswk_remark,follow_member_id=lu_obj.id)
+            tswk.save()
+
+            nex = Job(job_item=nex_group_context,remark=nex_remark,follow_member_id=lu_obj.id)
+            nex.save()
+
+            #获取会议
+            group = Group.objects.get(id=gid)
+            group.tswk_job.add(tswk)
+            group.nexwk_job.add(nex)
+        except Exception as e:
+            print "add group fail error is : %s" % e
+
+    response = {"success":"000000000"}
+    return HttpResponse(response)

@@ -70,10 +70,9 @@ class Member(models.Model):
 class Job(models.Model):
     job_item = models.CharField(verbose_name=u"工作事项",max_length=300)
     follow_member = models.ForeignKey(Member,verbose_name=u'跟进人',related_name="job_as_member")
-    status = models.BooleanField(verbose_name=u"当前状态",default=False)
+    job_status =  ((0, u'已完成'),(1, u'部分完成'),(2, u'未完成'),)
+    status = models.IntegerField(verbose_name=u"完成情况",choices=job_status,default=2)
     remark = models.CharField(verbose_name=u"备注",max_length=300)
-
-
 
     class Meta:
         verbose_name = u"会议组表"

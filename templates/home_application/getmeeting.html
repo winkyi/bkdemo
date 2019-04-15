@@ -35,7 +35,7 @@
                                         <div class="form-group">
                                             <label for="inputCount3" class="control-label"><span>*</span>主持人：</label>
                                             <div class="control-input">
-                                                <input type="text" class="form-control" id="inputCount3" placeholder="" disabled="disabled">
+                                                <input type="text" class="form-control" id="inputCount3" value= ${groups.hostess} disabled="disabled">
                                             </div>
                                             <div class="control-hint">
 
@@ -44,7 +44,7 @@
                                         <div class="form-group">
                                             <label for="inputCount3" class="control-label"><span>*</span>记录人：</label>
                                             <div class="control-input">
-                                                <input type="text" class="form-control" id="inputCount3" placeholder="" disabled="disabled">
+                                                <input type="text" class="form-control" id="inputCount3" value= ${groups.recorder} disabled="disabled">
                                             </div>
                                             <div class="control-hint">
 
@@ -53,7 +53,7 @@
                                         <div class="form-group">
                                             <label for="inputCount3" class="control-label"><span>*</span>时间：</label>
                                             <div class="control-input">
-                                                <input type="text" class="form-control" id="inputCount3" placeholder="" disabled="disabled">
+                                                <input type="text" class="form-control" id="inputCount3" value= ${groups.create_time} disabled="disabled">
                                             </div>
                                             <div class="control-hint">
 
@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <label for="inputCount3" class="control-label"><span>*</span>地点：</label>
                                             <div class="control-input">
-                                                <input type="text" class="form-control" id="inputCount3" placeholder="" disabled="disabled">
+                                                <input type="text" class="form-control" id="inputCount3" value= ${groups.addr} disabled="disabled">
                                             </div>
                                             <div class="control-hint">
 
@@ -73,7 +73,14 @@
                                         <div class="form-group">
                                             <label for="inputCount3" class="control-label">参加人员：</label>
                                             <div class="control-input">
-                                                <input type="text" style="width:650px" class="form-control" id="inputCount3" placeholder="" disabled="disabled">
+                                                <%  jm_obj = groups.join_member.all() %>
+
+
+                                                <input type="text" style="width:650px" class="form-control" id="inputCount3" value="
+% for jm in jm_obj:
+ ${jm.fullname},
+% endfor
+                                                " disabled="disabled">
                                             </div>
                                             <div class="control-hint">
 
@@ -82,7 +89,7 @@
                                         <div class="form-group">
                                             <label for="inputCount3" class="control-label">会议内容：</label>
                                             <div class="control-input">
-                                                <textarea id="group_context" name="group_context" class="form-control" rows="5" style="width:650px" disabled="disabled"></textarea>
+                                                <textarea id="group_context" name="group_context" class="form-control" rows="5" style="width:650px" disabled="disabled">${groups.group_context}</textarea>
                                             </div>
                                             <div class="control-hint">
 
@@ -106,25 +113,36 @@
                                     <tr>
                                         <th style="width:5%">#</th>
                                         <th style="width:45%;">工作内容</th>
+                                        <th style="width:10%;">跟进人</th>
                                         <th style="width:20%;">完成情况</th>
                                         <th>备注</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <%  tswk_obj = groups.tswk_job.all() %>
+                                % for tswk in tswk_obj:
                                     <tr>
                                         <td>1.</td>
-                                        <td>版本更新</td>
+                                        <td>
+                                                ${tswk.job_item}
+                                        </td>
+                                        <td>
+                                                ${tswk.follow_member}
+                                        </td>
+
                                         <td>
                                             <div class="sumoselect_demo" id="sumoselect_demo1">
                                             <select name="execution" class="SlectBox" disabled="disabled">
-                                                <option value="finish">已完成</option>
-                                                <option value="par_finish">部分完成</option>
-                                                <option value="unfinish">未完成</option>
+                                                <!-- models中choses的表现形式-->
+                                                <option >${tswk.get_status_display()}</option>
                                             </select>
                                     </div>
                                         </td>
-                                        <td>管理员</td>
+                                        <td>
+                                                ${tswk.remark}
+                                        </td>
                                     </tr>
+                                % endfor
                                 </tbody>
                             </table>
                         </div>
@@ -139,19 +157,26 @@
                                     <tr>
                                         <th style="width:5%">#</th>
                                         <th style="width:45%;">工作内容</th>
-                                        <th style="width:20%;">完成情况</th>
+                                        <th style="width:10%;">跟进人</th>
                                         <th>备注</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <%  nexwk_obj = groups.nexwk_job.all() %>
+                                    % for nexwk in nexwk_obj:
                                     <tr>
                                         <td>1.</td>
-                                        <td>版本更新</td>
                                         <td>
-                                            刚开始
+                                                ${nexwk.job_item}
                                         </td>
-                                        <td>管理员</td>
+                                        <td>
+                                                ${nexwk.follow_member}
+                                        </td>
+                                        <td>
+                                                ${nexwk.remark}
+                                        </td>
                                     </tr>
+                                % endfor
                                 </tbody>
                             </table>
                         </div>
