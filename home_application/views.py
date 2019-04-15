@@ -13,6 +13,7 @@ from common.mymako import render_mako_context
 from models import Member,Group,Job
 import json
 from django.http import  HttpResponse
+from django.db import transaction
 
 
 def home(request):
@@ -49,18 +50,29 @@ def work(request):
     return render_mako_context(request,'/home_application/work.html')
 
 
-def index(request):
-    return render_mako_context(request,'/home_application/index.html')
+
+#主页
+def index(request,**kwargs):
+    login_user = request.user
+    kwargs["login_user"] = login_user
+    return render_mako_context(request,'/home_application/index.html',kwargs)
 
 
-def group_add(request,**kwargs):
+
+#新增会议
+def meeting_add(request,**kwargs):
     all_members = Member.get_all_members(request.COOKIES.get('bk_token'))
     kwargs["members"] = all_members
-    print kwargs
-    return render_mako_context(request,'/home_application/groupadd.html',kwargs)
+    login_user = request.user
+    kwargs["login_user"] = login_user
+    return render_mako_context(request,'/home_application/meetingadd.html',kwargs)
 
 
-def group_save(request):
+
+#会议内容提交
+def meeting_save(request,**kwargs):
+    login_user = request.user
+    kwargs["login_user"] = login_user
     if (request.method == 'POST'):
         group_name = request.POST["group_name"]
         hostess = request.POST["hostess"]
@@ -70,30 +82,43 @@ def group_save(request):
         group_context = request.POST["group_context"]
         data = json.dumps({"group_name":group_name,"hostess":hostess,"recorder":recorder,"join_member":join_member,"group_addr":group_addr,"group_context":group_context})
         Group.add_group(data)
-        return render_mako_context(request,'/home_application/groupsave.html')
+        return render_mako_context(request,'/home_application/meetingsave.html',kwargs)
 
 
-def get_groups(request,**kwargs):
+
+#获取所有会议
+def get_meeting(request,**kwargs):
     all_group = Group.objects.all()
     kwargs["groups"] = all_group
-    return render_mako_context(request,'/home_application/getgroup.html',kwargs)
+    login_user = request.user
+    kwargs["login_user"] = login_user
+    return render_mako_context(request,'/home_application/getmeeting.html',kwargs)
 
-
-
-def get_meeting(request,**kwargs):
+#查看单个会议内容
+def view_meeting(request,**kwargs):
     gid = request.GET.get("gid")
     group = Group.objects.get(id=gid)
     kwargs["groups"] = group
-    return render_mako_context(request,'/home_application/getmeeting.html',kwargs)
+    login_user = request.user
+    kwargs["login_user"] = login_user
+    return render_mako_context(request,'/home_application/viewmeeting.html',kwargs)
 
 
+
+#工作内容新增页面
 def job_add(request,**kwargs):
     gid = request.GET.get("gid")
     kwargs["gid"] = gid
+    login_user = request.user
+    kwargs["login_user"] = login_user
     return render_mako_context(request,'/home_application/jobadd.html',kwargs)
 
 
-def job_save(request):
+
+#工作内容新增
+def job_save(request,**kwargs):
+    login_user = request.user
+    kwargs["login_user"] = login_user
     if (request.method == 'POST'):
         tswk_group_context = request.POST["tswk_group_context"]
         tswk_execution = request.POST["tswk_execution"]
@@ -104,23 +129,24 @@ def job_save(request):
 
         gid = request.GET.get("gid")
         try:
-            login_user = request.user
-            lu_obj = Member.objects.get(username=login_user)
-            tswk = Job(job_item=tswk_group_context,status=tswk_execution,remark=tswk_remark,follow_member_id=lu_obj.id)
-            tswk.save()
+            with transaction.atomic():
+                lu_obj = Member.objects.get(username=login_user)
+                tswk = Job(job_item=tswk_group_context,status=tswk_execution,remark=tswk_remark,follow_member_id=lu_obj.id)
+                tswk.save()
 
-            nex = Job(job_item=nex_group_context,remark=nex_remark,follow_member_id=lu_obj.id)
-            nex.save()
+                nex = Job(job_item=nex_group_context,remark=nex_remark,follow_member_id=lu_obj.id)
+                nex.save()
 
-            #获取会议
-            group = Group.objects.get(id=gid)
-            group.tswk_job.add(tswk)
-            group.nexwk_job.add(nex)
+                #获取会议
+                group = Group.objects.get(id=gid)
+                group.tswk_job.add(tswk)
+                group.nexwk_job.add(nex)
         except Exception as e:
             print "add group fail error is : %s" % e
 
-    response = {"success":"000000000"}
-    return HttpResponse(response)
+        all_group = Group.objects.all()
+        kwargs["groups"] = all_group
+        return render_mako_context(request,'/home_application/getmeeting.html',kwargs)
 
 def test1(request):
     return render_mako_context(request,'/home_application/test1.html')

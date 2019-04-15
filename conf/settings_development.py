@@ -19,7 +19,7 @@ from settings import APP_ID
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 默认用mysql
-        'NAME': 'bkdemo',                        # 数据库名 (默认与APP_ID相同)
+        'NAME': 'meeting',                        # 数据库名 (默认与APP_ID相同)
         'USER': 'root',                        # 你的数据库user
         'PASSWORD': 'root',                        # 你的数据库password
         'HOST': '127.0.0.1',                   # 开发的时候，使用localhost
